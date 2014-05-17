@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Electrum Bitcoin Wallet</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="btc">BTC</string>
+    <string name="hint_address">Enter a Bitcoin address</string>
+    <string name="hint_amount">... And amount (BTC)</string>
+
+</resources>
