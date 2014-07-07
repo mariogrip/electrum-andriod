@@ -6,6 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="btc">BTC</string>
     <string name="hint_address">Enter a Bitcoin address</string>
-    <string name="hint_amount">... And amount (BTC)</string>
-
+    <string name="hint_amount">And amount (BTC)</string>
+    <string name="loading">Electrum is running</string>
 </resources>
