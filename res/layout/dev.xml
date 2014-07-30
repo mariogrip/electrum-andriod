@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="125dp"
+        android:layout_height="130dp"
+        android:text="Output test"
+        android:id="@+id/button2" />
+
+    <Button
+        android:layout_width="125dp"
+        android:layout_height="130dp"
+        android:text="Check file"
+        android:id="@+id/button4" />
+
+    <Button
+        android:layout_width="125dp"
+        android:layout_height="130dp"
+        android:text="check Block"
+        android:id="@+id/button" />
+
+</LinearLayout>

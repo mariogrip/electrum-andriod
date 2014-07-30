@@ -12,9 +12,14 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class wallet {
 int COINBASE_MATURITY = 100;
@@ -73,15 +78,17 @@ String gets;
 	}
 	
 	
-	public String get(String key){
-		try {
-		  this.gets = (String) this.reads.get(key);
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return this.gets;
+	public Map get(String key) throws IOException, ClassNotFoundException {
+            File file = new File("/sdcard/electrum/wallet-a");
+            FileInputStream f = new FileInputStream(file);
+            ObjectInputStream s = new ObjectInputStream(f);
+            Map<String, Map> fileObj2 = (HashMap<String, Map>) s.readObject();
+            s.close();
+            return fileObj2.get(key);
 	}
+
+
+
 	public static boolean put(String key, String value, boolean save) throws JSONException, IOException, Exception {
         BufferedReader reader = new BufferedReader(new FileReader("/sdcard/electrum/wallet-a"));
         String line;
@@ -96,6 +103,14 @@ String gets;
         }
         JSONObject obj = new JSONObject();
         files.put(key, value);
+
+        //TODO Make read python list
+        Map<String, Object> fileObj = new HashMap<String, Object>();
+        ArrayList<String> yes = new ArrayList<String>();
+        yes.add("nrb1");
+        yes.add("nb2");
+        fileObj.put("test",yes);
+
         FileWriter file2 = new FileWriter("/sdcard/electrum/wallet-a");
         file2.write(obj.toString());
         file2.flush();

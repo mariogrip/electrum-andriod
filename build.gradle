@@ -15,7 +15,7 @@ dependencies {
 android {
     signingConfigs {
     }
-    compileSdkVersion 19
+    compileSdkVersion 20
     buildToolsVersion '20.0.0'
     sourceSets {
         main {

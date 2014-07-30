@@ -64,17 +64,16 @@
         android:layout_height="wrap_content"
         android:text="Bitcoin Address"
         android:layout_marginTop="37dp"
-        android:layout_below="@+id/space"
         android:layout_alignParentLeft="true" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="545kn3kjkHJHJkhjJJJKJjgjker3j43hjjkj"
+        android:text="17h2Ue6ozRyXXeF1r5Q4vmaRwbSe3abnQB"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_below="@+id/textView4"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -94,11 +93,13 @@
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/editText1" />
 
-    <Space
-        android:layout_width="20px"
-        android:layout_height="20px"
-        android:layout_below="@+id/button1"
-        android:layout_toLeftOf="@+id/textView"
-        android:id="@+id/space" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Debug"
+        android:id="@+id/devbutt"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/textView4" />
+
 
 </RelativeLayout>
