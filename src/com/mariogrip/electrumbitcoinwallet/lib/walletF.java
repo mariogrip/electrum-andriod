@@ -6,9 +6,10 @@ package com.mariogrip.electrumbitcoinwallet.lib;
 public class walletF extends wallet {
 
     private transaction transaction = new transaction();
-    public String addresses() {
 
-       /* String o;
+    protected String addresses() {
+
+        String o;
         for a in self.accounts.keys():
         o += self.get_account_addresses(a, include_change)
 
@@ -17,11 +18,11 @@ public class walletF extends wallet {
         if addr not in o:
         o +=[addr]
         return o
-                */
+
         return null;
     }
-/*
-    public String get_account_addresses(int a) {
+
+    protected String get_account_addresses(int a) {
 
         if (a == null) {
             String o;
@@ -86,5 +87,31 @@ public class walletF extends wallet {
         u += v
         return c,u
     }
-    */
+
+    protected double get_balance() {
+        double cc;
+        double uu;
+        String domain; // = self.addresses(True)
+        domain = this.addresses();
+        cc = uu = 0;
+        for(addr:domain){
+            //c, u = self.get_addr_balance(addr)
+            //cc += c
+            //uu += u
+        }
+        return cc,uu;
+    }
+
+    protected double get_balance(String domain) {
+        double cc;
+        double uu;
+        cc = uu = 0;
+        for(addr:domain){
+            //c, u = self.get_addr_balance(addr)
+            //cc += c
+            //uu += u
+        }
+        return cc,uu;
+    }
+
 }
