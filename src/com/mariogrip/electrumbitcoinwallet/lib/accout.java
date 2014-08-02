@@ -7,7 +7,9 @@ package com.mariogrip.electrumbitcoinwallet.lib;
  * I'm using OldAccount
  */
 public class accout {
-    String adresses = "";
+    String adresses = ""; //TODO Add
+    String change= "";
+    String mpk = "";
 
     public static String get_address(){
         return "d";

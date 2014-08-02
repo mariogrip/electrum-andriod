@@ -84,7 +84,8 @@ String gets;
             ObjectInputStream s = new ObjectInputStream(f);
             Map<String, Map> fileObj2 = (HashMap<String, Map>) s.readObject();
             s.close();
-            return fileObj2.get(key);
+            Map<String, Map> out = (HashMap<String, Map>) fileObj2.get(key);
+        return out;
 	}
 
 

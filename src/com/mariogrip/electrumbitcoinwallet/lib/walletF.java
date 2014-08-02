@@ -1,27 +1,57 @@
 package com.mariogrip.electrumbitcoinwallet.lib;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by mariogrip on 05.07.14.
  */
 public class walletF extends wallet {
 
+    protected String mpk;
     private transaction transaction = new transaction();
 
-    protected String addresses() {
+    protected List addresses() {
 
-        String o;
-        for a in self.accounts.keys():
-        o += self.get_account_addresses(a, include_change)
+        List<String> add = new ArrayList<String>();
+        add.add("14PqhJ9NyaNnBDr3hBHyLu96tFaNVb47Sk");
+        //TEST WITH ONE ADRESS
 
+        /*
+        List<String> o = new ArrayList<String>();
+
+        for (a : self.accounts.keys()) {
+            o += self.get_account_addresses(a, include_change)
+            o.add(a);
+        }
         if _next:
         for addr in self.next_addresses.values():
         if addr not in o:
         o +=[addr]
         return o
 
-        return null;
+*/
+        return add;
     }
 
+    private Map get_accounts() throws IOException, ClassNotFoundException {
+        List<String> accounts = new ArrayList<String>();
+        Map d = this.get("accounts");
+        Map<String, Map> d1 = (HashMap<String, Map>) d;
+        Map<String, Map> c = new HashMap<String, Map>();
+        for(Map.Entry<String, Map> entry : d1.entrySet()) {
+            String k = entry.getKey();
+            Map v = entry.getValue();
+            if (k == "0") {
+                c = (HashMap<String, Map>) v;
+            }
+        }
+        return c;
+    }
+/*
     protected String get_account_addresses(int a) {
 
         if (a == null) {
@@ -91,10 +121,10 @@ public class walletF extends wallet {
     protected double get_balance() {
         double cc;
         double uu;
-        String domain; // = self.addresses(True)
+        List<String> domain; // = self.addresses(True)
         domain = this.addresses();
         cc = uu = 0;
-        for(addr:domain){
+        for(String addr : domain){
             //c, u = self.get_addr_balance(addr)
             //cc += c
             //uu += u
@@ -113,5 +143,5 @@ public class walletF extends wallet {
         }
         return cc,uu;
     }
-
+*/
 }
