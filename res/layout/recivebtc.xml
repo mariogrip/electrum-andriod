@@ -19,7 +19,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true">
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/BalanceRev"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -58,8 +58,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="1GGdtEgbQ4ZzUUBsPbFbC2WUiboNRx7v3P"
-            android:id="@+id/textView3" />
+            android:text=""
+            android:id="@+id/BtcAdd" />
 
         </LinearLayout>
 
@@ -87,12 +87,20 @@
             android:layout_height="wrap_content"
             android:id="@+id/imageButton"
             android:background="#00000000"
-            android:src="@drawable/qr_test"
             android:layout_centerVertical="true"
             android:layout_alignRight="@+id/linearLayoutRev" />
 
-        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="QR coming soon!"
+            android:id="@+id/textView"
+            android:layout_centerVertical="true"
+            android:layout_alignRight="@+id/linearLayoutRev2" />
 
+
+    </LinearLayout>
 
 
 

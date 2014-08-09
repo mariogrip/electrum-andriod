@@ -44,13 +44,7 @@
         android:layout_marginTop="20dp"
         android:layout_alignParentRight="true">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Check Blockchain"
-            android:id="@+id/ChackBlock" />
-
-        <Button
+          <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Check Network"
@@ -60,11 +54,7 @@
             android:layout_height="wrap_content"
             android:text="Get Hight"
             android:id="@+id/getHi" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Get btc Price"
-            android:id="@+id/getBTC" />
+
 
     </LinearLayout>
 

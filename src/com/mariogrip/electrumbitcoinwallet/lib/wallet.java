@@ -49,6 +49,25 @@ String gets;
 		}
 	}
 	
+	public static boolean hasWallet(){
+		File MkDir = new File("/sdcard/electrum/");
+        File CheckFile = new File("/sdcard/electrum/electrum.dat");
+        if (!MkDir.exists()){
+        	MkDir.mkdirs();
+            if (!CheckFile.exists()){
+                return false;
+            }else {
+                return true;
+            }
+            }else{
+                if (!CheckFile.exists()){
+                    return false;
+                }else {
+                    return true;
+                }
+            }
+	}
+	
 	public static boolean canWR(){
 		init_path();
 		File Read = new File("/sdcard/electrum/wallet-a");
