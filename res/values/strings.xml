@@ -9,5 +9,6 @@
     <string name="hint_amount">And amount (BTC)</string>
     <string name="loading">Electrum is running</string>
     <string name="title_activity_create_wallet">Create Wallet</string>
+    <string name="Unconfirmed">(Unconfirmed)</string>
 
 </resources>

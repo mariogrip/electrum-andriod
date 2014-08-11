@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <LinearLayout android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,20 +17,57 @@
         android:id="@+id/linearLayoutMain"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
         <TextView
             android:id="@+id/BalanceMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:text="0.0000000"
+            android:text="0.00000000"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
             android:text="@string/btc" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/BalanceMainU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="0.00000000"
+                android:textAppearance="?android:attr/textAppearance" />
+
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_marginStart="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/btc" />
+
+
+            <TextView
+                android:id="@+id/textView223"
+                android:layout_marginStart="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/Unconfirmed" />
+        </LinearLayout>
     </LinearLayout>
    <LinearLayout
        android:layout_width="5dp"

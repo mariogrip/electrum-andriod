@@ -10,8 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mariogrip.electrumbitcoinwallet.MainActivity;
-import com.mariogrip.electrumbitcoinwallet.PythonWrapper;
 import com.mariogrip.electrumbitcoinwallet.R;
+import com.mariogrip.electrumbitcoinwallet.util;
 
 /**
  * Created by mariogrip on 01.08.14.
@@ -32,6 +32,8 @@ public class sendbtc extends Fragment{
 
         TextView BalanceSend = (TextView) rootView.findViewById(R.id.BalanceSend);
         BalanceSend.setText(MainActivity.Bal.toString());
+        TextView BalanceSendU = (TextView) rootView.findViewById(R.id.BalanceSendU);
+        BalanceSendU.setText(MainActivity.UBal.toString());
 
         Button SendBtc = (Button) rootView.findViewById(R.id.SendBtcButton);
         SendBtc.setOnClickListener(new View.OnClickListener() {
@@ -39,22 +41,38 @@ public class sendbtc extends Fragment{
         	
             @Override
             public void onClick(View v) {
+            	
                 TextView SendAddr = (TextView) rootView.findViewById(R.id.SendBtcAddr);
                 TextView SendAmount = (TextView) rootView.findViewById(R.id.SendBtcAmout);
-                String Addr = (String) SendAddr.getText().toString();
-                Double Amount = Double.parseDouble(SendAmount.getText().toString());
-                Double AmountHave = Double.parseDouble(PythonWrapper.quarry("import boot \nimport api \nfrom api import * \napi = api() \nbackto = api.getbalance() \n"));
-                if (Amount == 0) {
-                    Toast.makeText(getActivity(), "You cannot send 0 btc", Toast.LENGTH_SHORT).show();
-                }else{
-                    if (Amount > AmountHave) {
-                        Toast.makeText(getActivity(), "You do not have enough bitcoins to send", Toast.LENGTH_SHORT).show();
+                if (!SendAddr.getText().toString().matches("")){
+                	if (!SendAmount.getText().toString().matches("")){
+          
+                    String Addr = (String) SendAddr.getText().toString();
+                    Double Amount = Double.parseDouble(SendAmount.getText().toString());
+                    Double AmountHave = Double.parseDouble(MainActivity.Bal);
+                    if (Amount == 0) {
+                        Toast.makeText(getActivity(), "You cannot send 0 btc", Toast.LENGTH_SHORT).show();
                     } else {
-                    	Toast.makeText(getActivity(), "Okey", Toast.LENGTH_SHORT);
-                        //PythonWrapper.quarry("try:\n    import boot \n    import api \n    from api import * \n    api = api() \n    backto = api.payto(" + Addr + ", " + Amount.toString() + ") \nexcept Exception,e: print str(e)\n");
+                        if (Amount > AmountHave) {
+                            Toast.makeText(getActivity(), "You do not have enough Bitcoins to send", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getActivity(), "Okey", Toast.LENGTH_SHORT).show();
+                            if (util.SendBtc(Addr, SendAmount.getText().toString())){
+                                Toast.makeText(getActivity(), "Success! Sends " + Amount.toString() + " To " + Addr, Toast.LENGTH_SHORT);
+                            }else{
+                                Toast.makeText(getActivity(), "ERROR: Cannot send btc, Please report this error (code: 00x1)", Toast.LENGTH_LONG).show();
+                            }
+                            //PythonWrapper.quarry("try:\n    import boot \n    import api \n    from api import * \n    api = api() \n    backto = api.payto(" + Addr + ", " + Amount.toString() + ") \nexcept Exception,e: print str(e)\n");
 
+                        }
                     }
+                    }else{
+                        Toast.makeText(getActivity(), "Please fill out all fields", Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(getActivity(), "Please fill out all fields", Toast.LENGTH_LONG).show();
                 }
+
             }
         });
         

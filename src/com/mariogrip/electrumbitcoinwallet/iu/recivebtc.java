@@ -25,6 +25,8 @@ public class recivebtc extends Fragment{
 
         TextView BalanceRev = (TextView) rootView.findViewById(R.id.BalanceRev);
         BalanceRev.setText(MainActivity.Bal.toString());
+        TextView BalanceRevU = (TextView) rootView.findViewById(R.id.BalanceRevU);
+        BalanceRevU.setText(MainActivity.UBal.toString());
         TextView SetAdd = (TextView) rootView.findViewById(R.id.BtcAdd);
         SetAdd.setText(MainActivity.Addr.toString());
 
