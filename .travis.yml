@@ -1,8 +1,9 @@
 language: android
-install: ant debug install test
+install: 
+  - ant debug install test
+  - android update project -p .
 before_install:
   sudo pip install codecov
-  android update project -p .
 after_success:
   codecov
 android:
