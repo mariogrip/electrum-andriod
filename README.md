@@ -3,18 +3,10 @@ electrum-andriod
 
 Electrum Bitcoin wallet, rewritten in java.
 
-
-What is working && what is not?
-
-Working:
--Wallet write/read (need some more work)
--Hash coding
-
-
-Not:
--Network
--Blockhain
+that this application is experimental and might crash that may lead to voiding your bitcoins? (Please do not PUT a lot of bitcoins into this app yet!)
 
 
 ==========
-Under Deveopment.
+Experimental builds
+
+[![Build Status](https://travis-ci.org/mariogrip/electrum-andriod.svg)](https://travis-ci.org/mariogrip/electrum-andriod)
