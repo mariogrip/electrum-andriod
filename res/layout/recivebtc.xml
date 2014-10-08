@@ -2,80 +2,52 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="#ddd"
+    android:background="#202020"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:weightSum="1"
     android:id="@+id/SendbtcLay">
 
     <LinearLayout android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/round"
-        android:id="@+id/linearLayoutRev"
+        android:background="@drawable/round2"
         android:orientation="vertical"
+        android:id="@+id/linearLayoutRev"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true">
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="horizontal" >
-        <TextView
-            android:id="@+id/BalanceRev"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:text="0.0000000"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_alignBottom="@+id/textView1"
-            android:layout_toEndOf="@+id/textView1"
-            android:text="@string/btc" />
-    </LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:background="@drawable/round2"
             android:orientation="horizontal" >
-            <TextView
-                android:id="@+id/BalanceRevU"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
+                android:id="@+id/imageView"
+                android:src="@drawable/wallet"
+                />
+            <TextView
+                android:id="@+id/BalanceRev"
+                android:gravity="center"
+                android:textSize="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="0.00000000"
-                android:textAppearance="?android:attr/textAppearance" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_marginStart="2dp"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/btc" />
-            <TextView
-                android:id="@+id/textView223"
-                android:layout_marginStart="2dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/Unconfirmed" />
         </LinearLayout>
-    </LinearLayout>
 
+    </LinearLayout>
     <LinearLayout
-        android:layout_width="5dp"
-        android:layout_height="5dp"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_height="2dp"
+        android:background="@drawable/round3"
         android:layout_below="@id/linearLayoutRev"
-        android:orientation="horizontal"
-        android:id="@+id/spacer1Sev">
+        android:orientation="vertical"
+        android:id="@+id/spacer1Rev">
     </LinearLayout>
 
 
@@ -84,58 +56,31 @@
         android:background="@drawable/round"
         android:id="@+id/linearLayoutRev3"
         android:orientation="vertical"
-        android:layout_below="@id/spacer1Sev"
+        android:layout_below="@id/spacer1Rev"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/QR"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_marginTop="10dp"
             android:text=""
             android:id="@+id/BtcAdd" />
 
+
+
+
         </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="5dp"
-        android:layout_height="5dp"
-        android:layout_below="@id/linearLayoutRev3"
-        android:orientation="horizontal"
-        android:id="@+id/spacer2Sev">
-    </LinearLayout>
-
-    <LinearLayout android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/round_blue"
-        android:id="@+id/linearLayoutRev2"
-        android:orientation="vertical"
-        android:layout_below="@id/spacer2Sev"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true">
-
-
-        <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton"
-            android:background="#00000000"
-            android:layout_centerVertical="true"
-            android:layout_alignRight="@+id/linearLayoutRev" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="QR coming soon!"
-            android:id="@+id/textView"
-            android:layout_centerVertical="true"
-            android:layout_alignRight="@+id/linearLayoutRev2" />
-
-
-    </LinearLayout>
-
 
 
 </RelativeLayout>

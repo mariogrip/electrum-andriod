@@ -3,73 +3,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ddd"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#202020"
     tools:context=".MainActivity"
     android:id="@+id/MainAct">
 
     <LinearLayout android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/round"
-        android:id="@+id/linearLayoutSend"
+        android:background="@drawable/round2"
         android:orientation="vertical"
+        android:id="@+id/linearLayoutSend"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true">
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:background="@drawable/round2"
         android:orientation="horizontal" >
-    <TextView
-        android:id="@+id/BalanceSend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0.0000000"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/wallet"
+            />
+        <TextView
+            android:id="@+id/BalanceSend"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:textSize="35dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="0.00000000"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:text="@string/btc" />
     </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="horizontal" >
-            <TextView
-                android:id="@+id/BalanceSendU"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.00000000"
-                android:textAppearance="?android:attr/textAppearance" />
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/btc" />
-
-            <TextView
-                android:id="@+id/textView223"
-                android:layout_marginStart="2dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/Unconfirmed" />
-
-        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="5dp"
-        android:layout_height="5dp"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_height="2dp"
+        android:background="@drawable/round3"
         android:layout_below="@id/linearLayoutSend"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:id="@+id/spacer1Send">
     </LinearLayout>
 
@@ -110,6 +89,7 @@
         android:hint="@string/hint_amount" />
 
         <TextView
+            android:layout_marginStart="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
@@ -120,14 +100,21 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="5dp"
-        android:layout_height="5dp"
+        android:layout_marginTop="1dp"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_height="0dp"
         android:layout_below="@id/linearLayoutSendForm"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:background="@drawable/round3"
         android:id="@+id/spacer1Send2">
     </LinearLayout>
 
     <LinearLayout android:layout_width="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="12dp"
         android:layout_height="wrap_content"
         android:background="@drawable/round_blue"
         android:orientation="vertical"

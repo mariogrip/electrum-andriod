@@ -5,9 +5,11 @@ Developer: Mariogrip
 package com.mariogrip.electrumbitcoinwallet;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -59,6 +61,7 @@ public class MainActivity extends Activity {
     public static String Bal;
     public static String Addr;
     public static String UBal;
+    public static boolean debug;
     public static boolean Paying;
 
 
@@ -74,6 +77,7 @@ public class MainActivity extends Activity {
         Bal = "0.00000000";
         UBal = "0.00000000";
         Paying = false;
+        debug = true;
 
 
             mTitle = mDrawerTitle = getTitle();
@@ -114,7 +118,30 @@ public class MainActivity extends Activity {
                 selectItem(0);
             }
 
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+         // Add the buttons
+         builder.setTitle("Warning!");
+         builder.setMessage("I understand that this application is experimental and might crash that may lead to voiding your bitcoins? (Please do not PUT a lot of bitcoins into this app yet!)");
+         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        runWallet();
+                    }
+                });
+         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        MainActivity.this.finish();
+                    }
+                });
+
+         AlertDialog dialog = builder.create();
+         dialog.show();
             
+
+    }
+    
+    private void runWallet(){
+
         if (!wallet.hasWallet()){
             progress = new ProgressDialog(this);
             progress.setTitle("Loading");
@@ -125,7 +152,7 @@ public class MainActivity extends Activity {
             new Thread() {
                 public void run() {
                     Log.d("Electrum-A", "Setting up wallet");
-                   new AssetExtractor(MainActivity.this).run();
+                    new AssetExtractor(MainActivity.this).run();
                     PythonWrapper.start(getFilesDir().getAbsolutePath() + "/lib", getFilesDir().getAbsolutePath() + "/lib/python");
                     handler.sendEmptyMessage(1);
                 }
@@ -189,20 +216,14 @@ public class MainActivity extends Activity {
                              case 0:
                                  BalanceMain = (TextView) findViewById(R.id.BalanceMain);
                                  BalanceMain.setText(Balance.toString());
-                                 BalanceMainU = (TextView) findViewById(R.id.BalanceMainU);
-                                 BalanceMainU.setText(UnBalance.toString());
                                  break;
                              case 1:
                                  BalanceSend = (TextView) findViewById(R.id.BalanceSend);
                                  BalanceSend.setText(Balance.toString());
-                                 BalanceSendU = (TextView) findViewById(R.id.BalanceSendU);
-                                 BalanceSendU.setText(UnBalance.toString());
                                  break;
                              case 2:
                                  BalanceRev = (TextView) findViewById(R.id.BalanceRev);
                                  BalanceRev.setText(Balance.toString());
-                                 BalanceRevU = (TextView) findViewById(R.id.BalanceRevU);
-                                 BalanceRevU.setText(UnBalance.toString());
                                  break;
                              default:
                                  break;
@@ -218,11 +239,11 @@ public class MainActivity extends Activity {
     	timer.schedule(timerTask, 0, 10000);
     	
 
+   
     }
     
-    
 
-    public void create(){
+    private void create(){
         progress = new ProgressDialog(this);
         progress.setTitle("Loading");
         progress.setMessage("Downloading chunks");
@@ -344,8 +365,6 @@ public class MainActivity extends Activity {
             rootView = inflater.inflate(R.layout.activity_main, container, false);
             TextView BalanceSend = (TextView) rootView.findViewById(R.id.BalanceMain);
             BalanceSend.setText(MainActivity.Bal.toString());
-            TextView BalanceSendU = (TextView) rootView.findViewById(R.id.BalanceMainU);
-            BalanceSendU.setText(MainActivity.UBal.toString());
             getActivity().setTitle(naws);
             return rootView;
         }

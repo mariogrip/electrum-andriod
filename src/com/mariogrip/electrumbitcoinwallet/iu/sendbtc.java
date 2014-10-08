@@ -32,8 +32,6 @@ public class sendbtc extends Fragment{
 
         TextView BalanceSend = (TextView) rootView.findViewById(R.id.BalanceSend);
         BalanceSend.setText(MainActivity.Bal.toString());
-        TextView BalanceSendU = (TextView) rootView.findViewById(R.id.BalanceSendU);
-        BalanceSendU.setText(MainActivity.UBal.toString());
 
         Button SendBtc = (Button) rootView.findViewById(R.id.SendBtcButton);
         SendBtc.setOnClickListener(new View.OnClickListener() {

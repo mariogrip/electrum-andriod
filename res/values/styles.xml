@@ -5,6 +5,7 @@
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
+
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -13,8 +14,21 @@
     </style>
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <style name="AppTheme" parent="@android:style/Theme.DeviceDefault">
+
     </style>
+        <style name="CustomActionBarTheme"
+            parent="android:Theme.DeviceDefault">
+            <item name="android:actionBarStyle">@style/MyActionBar</item>
+
+        </style>
+
+        <!-- general styles for the action bar -->
+        <style name="MyActionBar"
+            parent="android:Widget.ActionBar">
+            <item name="android:background">#111111</item>
+            <item name="android:backgroundStacked">#0099CC</item>
+            <item name="android:backgroundSplit">#0099CC</item>
+        </style>
 
 </resources>

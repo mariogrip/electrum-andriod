@@ -3,77 +3,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ddd"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#202020"
+
+
     tools:context=".MainActivity">
 
     <LinearLayout android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/round"
+        android:background="@drawable/round2"
         android:orientation="vertical"
         android:id="@+id/linearLayoutMain"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true">
     <LinearLayout
+        android:background="@drawable/round2"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="horizontal" >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/wallet"
+            />
         <TextView
             android:id="@+id/BalanceMain"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:text="0.00000000"
+            android:textSize="35dp"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:text="@string/btc" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="horizontal" >
-            <TextView
-                android:id="@+id/BalanceMainU"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:text="0.00000000"
-                android:textAppearance="?android:attr/textAppearance" />
 
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_marginStart="2dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/btc" />
-
-
-            <TextView
-                android:id="@+id/textView223"
-                android:layout_marginStart="2dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/Unconfirmed" />
-        </LinearLayout>
     </LinearLayout>
    <LinearLayout
-       android:layout_width="5dp"
-       android:layout_height="5dp"
+       android:layout_width="wrap_content"
+       android:layout_alignParentLeft="true"
+       android:layout_alignParentRight="true"
+       android:layout_height="2dp"
+       android:background="@drawable/round3"
        android:layout_below="@id/linearLayoutMain"
-       android:orientation="horizontal"
+       android:orientation="vertical"
        android:id="@+id/spacer1Main">
        </LinearLayout>
 
@@ -94,15 +70,8 @@
             android:layout_alignRight="@+id/linearLayout2" />
 
     </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="830dp"
-        android:layout_marginTop="81dp"
-        android:id="@+id/linearLayout"></LinearLayout>
+
+
 
 
 </RelativeLayout>

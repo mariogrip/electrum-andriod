@@ -5,10 +5,11 @@
 
     <!-- view background color -->
     <solid
-        android:color="#202020" >
+        android:color="#ff181818" >
     </solid>
 
     <!-- view border color and width -->
+
 
     <!-- If you want to add some padding -->
     <padding
