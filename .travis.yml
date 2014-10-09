@@ -1,13 +1,16 @@
 language: android
-install: ant deps
+install: 
+  - android update project -p .
+  - ant debug
 before_install:
   sudo pip install codecov
 after_success:
   codecov
 android:
   components:
+    - platform-tools
+    - tools
     - build-tools-19.1.0
     - android-19
-    - addon-google_apis-google-19
     - sys-img-armeabi-v7a-android-19
     - sys-img-x86-android-17
