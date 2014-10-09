@@ -27,3 +27,6 @@ proguard/
 
 # Tmp
 tmp/
+
+#Removing this because of travis-ci.org trying to use gradle to compile
+build.gradle
